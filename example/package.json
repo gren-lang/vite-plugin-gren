@@ -1,0 +1,16 @@
+{
+  "name": "example",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "BSD-3-Clause",
+  "description": "",
+  "dependencies": {
+    "gren-lang": "^0.6.0",
+    "vite": "^7.0.5",
+    "vite-plugin-gren": "file:.."
+  }
+}

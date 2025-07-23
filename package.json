@@ -1,0 +1,32 @@
+{
+  "name": "vite-plugin-gren",
+  "version": "0.6.0",
+  "description": "A vite plugin for the Gren programming language",
+  "author": "Robin Heggelund Hansen",
+  "license": "BSD-3-Clause",
+  "homepage": "https://github.com/gren-lang/vite-plugin-gren",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gren-lang/vite-plugin-gren"
+  },
+  "keywords": [
+    "gren",
+    "gren-lang",
+    "glogg-lang",
+    "rollup-plugin",
+    "vite-plugin"
+  ],
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "format": "prettier -w \"!**/*.json\" .",
+    "format:check": "prettier -c \"!**/*.json\" ."
+  },
+  "peerDependencies": {
+    "gren-lang": "^0.6.0"
+  },
+  "devDependencies": {
+    "prettier": "^3.5.2"
+  }
+}

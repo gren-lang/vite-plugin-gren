@@ -1,5 +1,5 @@
-import * as Gren from "./src/Main.gren";
+import { Gren } from "./src/Main.gren";
 
-console.log(Gren);
-
-Gren.Main.init({});
+Gren.Main.init({
+  node: document.getElementById("gren"),
+});

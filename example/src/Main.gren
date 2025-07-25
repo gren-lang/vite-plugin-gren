@@ -4,6 +4,7 @@ import Browser
 import Html exposing (Html)
 import Html.Attributes as Attribute
 import Html.Events as Event
+import Init.Const as Const
 
 
 main =
@@ -20,7 +21,7 @@ type alias Model =
 
 init : Model
 init =
-    0
+    Const.startingValue
 
 
 type Msg

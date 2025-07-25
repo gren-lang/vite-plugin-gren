@@ -1,0 +1,10 @@
+module Init.Const exposing (startingValue)
+
+{-| This module is a bit forced. It's here simply
+to test that code-reloading works when making changes
+to a non-entrypoint module.
+-}
+
+startingValue : Int
+startingValue =
+    0

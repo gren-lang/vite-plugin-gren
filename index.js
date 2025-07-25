@@ -20,6 +20,10 @@ export default function plugin(opts) {
           optimize: opts.optimize,
         });
 
+        for (const sourceFile of await findSources(foundOutline)) {
+          this.addWatchFile(sourceFile)
+        }
+
         return toESModule(source);
       }
     },
@@ -68,6 +72,29 @@ function findTarget(id, outline) {
   }
 
   return potentialTargets[0];
+}
+
+async function findSources(foundOutline) {
+  const projectPath = foundOutline.projectPath;
+  const sources = [
+    path.join(projectPath, "gren.json")
+  ];
+
+  const srcDirs = foundOutline.contents['source-directories'];
+  for (const srcDir of srcDirs) {
+    const srcRoot = path.join(projectPath, srcDir);
+    const files = await fs.readdir(srcRoot, { recursive: true });
+
+    for (const file of files) {
+      if (fileRegex.test(file)) {
+        sources.push(
+          path.join(srcRoot, file)
+        );
+      }
+    }
+  }
+
+  return sources
 }
 
 // From elm-asm

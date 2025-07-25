@@ -7,7 +7,7 @@
   "homepage": "https://github.com/gren-lang/vite-plugin-gren",
   "repository": {
     "type": "git",
-    "url": "https://github.com/gren-lang/vite-plugin-gren"
+    "url": "git+https://github.com/gren-lang/vite-plugin-gren.git"
   },
   "keywords": [
     "gren",
@@ -18,7 +18,7 @@
   "type": "module",
   "main": "index.js",
   "files": [
-    "index.js"    
+    "index.js"
   ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",

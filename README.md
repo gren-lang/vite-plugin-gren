@@ -8,7 +8,7 @@ Install using `npm install --save-dev vite-plugin-gren`.
 
 A minimal `vite.config.js` configuration is as follows:
 
-```
+```js
 import gren from "vite-plugin-gren";
 import { defineConfig } from "vite";
 

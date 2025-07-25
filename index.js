@@ -4,7 +4,12 @@ import * as fs from "node:fs/promises";
 
 const fileRegex = /\.gren$/;
 
-export default function plugin(opts) {
+export default function plugin(rawOpts) {
+  const opts = rawOpts || {
+    sourcemaps: true,
+    optimize: false,
+  };
+
   return {
     name: "vite-plugin-glogg",
 

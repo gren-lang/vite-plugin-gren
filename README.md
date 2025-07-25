@@ -18,7 +18,7 @@ export default defineConfig({
       // Generate sourcemaps, default: true
       // Allows you to view Gren source code in the browser's dev tools
       // Increases compile time
-      sourcemaps: true, 
+      sourcemaps: true,
       // Generate optimized JavaScript, default: false
       // Setting this to false makes the generated JS more readable, and allows usage
       // of the Debug module

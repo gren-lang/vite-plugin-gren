@@ -15,8 +15,15 @@ import { defineConfig } from "vite";
 export default defineConfig({
   plugins: [
     gren({
-      sourcemaps: true, // Gren sources in the browser's devtools
-      optimize: false, // Allows usage of Debug module, disable for production builds
+      // Generate sourcemaps, default: true
+      // Allows you to view Gren source code in the browser's dev tools
+      // Increases compile time
+      sourcemaps: true, 
+      // Generate optimized JavaScript, default: false
+      // Setting this to false makes the generated JS more readable, and allows usage
+      // of the Debug module
+      // Should be enabled for production builds
+      optimize: false,
     }),
   ],
 });

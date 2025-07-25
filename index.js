@@ -21,7 +21,7 @@ export default function plugin(opts) {
         });
 
         for (const sourceFile of await findSources(foundOutline)) {
-          this.addWatchFile(sourceFile)
+          this.addWatchFile(sourceFile);
         }
 
         return toESModule(source);
@@ -76,25 +76,21 @@ function findTarget(id, outline) {
 
 async function findSources(foundOutline) {
   const projectPath = foundOutline.projectPath;
-  const sources = [
-    path.join(projectPath, "gren.json")
-  ];
+  const sources = [path.join(projectPath, "gren.json")];
 
-  const srcDirs = foundOutline.contents['source-directories'];
+  const srcDirs = foundOutline.contents["source-directories"];
   for (const srcDir of srcDirs) {
     const srcRoot = path.join(projectPath, srcDir);
     const files = await fs.readdir(srcRoot, { recursive: true });
 
     for (const file of files) {
       if (fileRegex.test(file)) {
-        sources.push(
-          path.join(srcRoot, file)
-        );
+        sources.push(path.join(srcRoot, file));
       }
     }
   }
 
-  return sources
+  return sources;
 }
 
 // From elm-asm
@@ -107,8 +103,7 @@ function toESModule(js) {
     .replace(/function _Platform_export([^]*?)\}\n/g, "/*\n$&\n*/")
     .replace(/function _Platform_mergeExports([^]*?)\}\n\s*}/g, "/*\n$&\n*/")
     .replace(/^\s*_Platform_export\(([^]*)\);\n?}\([^]*\);/m, "/*\n$&\n*/")
-    .replaceAll(/var (\S*) = (F[2-9])/g, "var $1 = /* @__PURE__ */ $2")
-    .concat(`
+    .replaceAll(/var (\S*) = (F[2-9])/g, "var $1 = /* @__PURE__ */ $2").concat(`
 export const Gren = ${exports};
   `);
 }

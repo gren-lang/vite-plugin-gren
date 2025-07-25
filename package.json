@@ -23,8 +23,11 @@
     "format": "prettier -w \"!**/*.json\" .",
     "format:check": "prettier -c \"!**/*.json\" ."
   },
-  "peerDependencies": {
+  "dependencies": {
     "gren-lang": "^0.6.0"
+  },
+  "peerDependencies": {
+    "vite": "^7.0.0"
   },
   "devDependencies": {
     "prettier": "^3.5.2"

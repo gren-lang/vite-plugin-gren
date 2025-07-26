@@ -108,7 +108,7 @@ function toESModule(js) {
     .replace(/function _Platform_export([^]*?)\}\n/g, "/*\n$&\n*/")
     .replace(/function _Platform_mergeExports([^]*?)\}\n\s*}/g, "/*\n$&\n*/")
     .replace(/^\s*_Platform_export\(([^]*)\);\n?}\([^]*\);/m, "/*\n$&\n*/")
-    .replaceAll(/var (\S*) = (F[2-9])/g, "var $1 = /* @__PURE__ */ $2").concat(`
+    .concat(`
 export const Gren = ${exports};
   `);
 }

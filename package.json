@@ -29,7 +29,7 @@
     "gren-lang": "^0.6.0"
   },
   "peerDependencies": {
-    "vite": "^7.0.0"
+    "vite": "7.x"
   },
   "devDependencies": {
     "prettier": "^3.5.2"

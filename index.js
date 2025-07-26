@@ -23,6 +23,7 @@ export default function plugin(rawOpts) {
           target: target,
           sourcemaps: opts.sourcemaps,
           optimize: opts.optimize,
+          env: process.env,
         });
 
         for (const sourceFile of await findSources(foundOutline)) {

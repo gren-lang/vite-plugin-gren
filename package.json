@@ -1,6 +1,6 @@
 {
   "name": "vite-plugin-gren",
-  "version": "0.6.0",
+  "version": "0.6.1",
   "description": "A vite plugin for the Gren programming language",
   "author": "Robin Heggelund Hansen",
   "license": "BSD-3-Clause",
